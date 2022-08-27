@@ -20,7 +20,7 @@ public class FeesBody {
         this.data = data;
     }
 
-    public class Datum{
+    public static class Datum{
         @JsonProperty("Key")
         public String key;
         @JsonProperty("Value")

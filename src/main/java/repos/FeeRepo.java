@@ -19,4 +19,14 @@ public class FeeRepo {
         feesBody.brn=brn;
         return  feesBody;
     }
+    public static FeesBody get(String feeLabel, int brn, String sequence)
+    {
+        FeesBody feesBody= feeTestData.get(feeLabel);
+        feesBody.brn=brn;
+        FeesBody.Datum datum = new FeesBody.Datum();
+        datum.key="Sequence";
+        datum.value=sequence;
+        feesBody.data.add(1,datum);
+        return  feesBody;
+    }
 }

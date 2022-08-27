@@ -61,6 +61,9 @@ public class Customer {
 	public Integer getBrn(String serviceId, InquiryBody inquiryBody) {
 		return Integer.valueOf(RestActions.getResponseJSONValue(inquiry(serviceId,inquiryBody), "Brn"));
 	}
+	public String getSequence(String serviceId, InquiryBody inquiryBody) {
+		return String.valueOf(RestActions.getResponseJSONValue(inquiry(serviceId,inquiryBody), "Sequence"));
+	}
 	public Response getFees(String serviceId,FeesBody feesBody) {
 		FeesRequest feesRequest= new FeesRequest(serviceId,login());
 		return feesRequest.send(feesBody);

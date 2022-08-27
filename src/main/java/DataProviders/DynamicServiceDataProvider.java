@@ -11,6 +11,7 @@ public class DynamicServiceDataProvider {
 
     public ArrayList<String[]>  getInquiryData(){
         GetCategoriesRequest getCategoriesRequest= new GetCategoriesRequest();
+        getCategoriesRequest.send();
         ArrayList<GetCategoriesResponse.Service> data=GetCategoriesRequest.getServices((GetCategoriesResponse) getCategoriesRequest.deserialize());
         List<String> Values=new ArrayList<>();
         ArrayList<String[]> inquiryData= new ArrayList<>();
@@ -28,6 +29,7 @@ public class DynamicServiceDataProvider {
     }
     public ArrayList<String[]>  getAllData(){
         GetCategoriesRequest getCategoriesRequest= new GetCategoriesRequest();
+        getCategoriesRequest.send();
         ArrayList<GetCategoriesResponse.Service> data=GetCategoriesRequest.getServices((GetCategoriesResponse) getCategoriesRequest.deserialize());
         List<String> Values=new ArrayList<>();
         ArrayList<String[]> inquiryData= new ArrayList<>();

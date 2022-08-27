@@ -31,8 +31,9 @@ public class FeeTest {
         Customer eligibleCustomer = UserRepo.get("ValidCustomer");
         String token  = eligibleCustomer.login();
         int brn = eligibleCustomer.getBrn(serviceId , InquiryRepo.get("extraqouta_line"));
+        String sequence = eligibleCustomer.getSequence(serviceId , InquiryRepo.get("extraqouta_line"));
 //        action
-        Response resp = eligibleCustomer.getFees(serviceId, FeeRepo.get("ValidFee",brn));
+        Response resp = eligibleCustomer.getFees(serviceId, FeeRepo.get("ValidFee",brn,sequence));
 //        assert values in the response
         resp.prettyPrint();
     //    Assert.assertEquals(response.getStatusCode(), 200);
@@ -46,8 +47,9 @@ public class FeeTest {
         Customer eligibleCustomer = UserRepo.get("ValidCustomer");
         String token  = eligibleCustomer.login();
         int brn = eligibleCustomer.getBrn(serviceId , InquiryRepo.get("extraqouta_line"));
+        String sequence = eligibleCustomer.getSequence(serviceId , InquiryRepo.get("extraqouta_line"));
 //        action
-        Response resp = eligibleCustomer.getFees(serviceId, FeeRepo.get("InvalidFee",brn));
+        Response resp = eligibleCustomer.getFees(serviceId, FeeRepo.get("InvalidFee",brn,sequence));
 //        assert values in the response
         resp.prettyPrint();
         //    Assert.assertEquals(response.getStatusCode(), 200);
@@ -62,8 +64,9 @@ public class FeeTest {
         Customer eligibleCustomer = UserRepo.get("InvalidCustomer");
         String token  = eligibleCustomer.login();
         int brn = eligibleCustomer.getBrn(serviceId , InquiryRepo.get("extraqouta_line"));
+        String sequence = eligibleCustomer.getSequence(serviceId , InquiryRepo.get("extraqouta_line"));
 //        action
-        Response resp = eligibleCustomer.getFees(serviceId, FeeRepo.get("ValidFee",brn));
+        Response resp = eligibleCustomer.getFees(serviceId, FeeRepo.get("ValidFee",brn,sequence));
 //        assert values in the response
         resp.prettyPrint();
         //    Assert.assertEquals(response.getStatusCode(), 200);
